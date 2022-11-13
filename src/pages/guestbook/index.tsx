@@ -31,7 +31,7 @@ const Home: FC = () => {
   const handleSubmit = () => {
     setIsSending(true);
     postMessages.mutate({
-      name: "hoge",
+      name: session?.user?.name ?? "anonymous",
       message,
     });
     setMessage("");
